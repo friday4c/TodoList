@@ -3,10 +3,12 @@ var style = {
 	border: "1px #000 solid",
 };
 
+var todoThings = "firstThing at 1:00:00";
+
 var TodoList = React.createClass({
 	render: function() {
 		return (
-			<p>testRender</p>
+			<p>{todoThings}</p>
 		);
 	}
 });
