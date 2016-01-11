@@ -1,0 +1,54 @@
+html,body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+div {
+	margin:0px;
+	padding:0px;
+	border-style:solid;
+	border-width:0px;
+}
+
+div#viewbox {
+	margin:0px;
+	padding:0px;
+	border-width:0px;
+	width:100%;
+	height:100%;
+	background-color:#E0E0E0;
+}
+
+div#topView {
+	background-color:#FF1721;
+	border-color:#F8DF03;
+	/*height:10%;*/
+	text-align:center;
+	font-size:60px;
+}
+
+div#midView {
+	background-color:#2548FF;
+	border-color:#07F8CA;
+	height:70%;
+	text-align:center;
+}
+
+div#bottomView {
+	background-color:#1EFF0E;
+	border-color:#F800ED;
+	height:20%;
+	text-align:center;
+}
+
+input {
+	width:50%;
+	height:50%;
+}
+
+button {
+	width:30px;
+	height:30px;
+	background-color:#9F39E0;
+}
