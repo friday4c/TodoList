@@ -28,6 +28,11 @@ var TodoList = React.createClass({
     		],
 	    };
 	},
+
+	refreshTodoContentList: function () {
+		console.log('rrrrrrrrrrefresh');
+	},
+
 	render: function() {
 		console.log('render, 33333333');
 		var tString = '';
@@ -38,19 +43,25 @@ var TodoList = React.createClass({
 		return (
 			<div style={style}>
 				<div style={cStyle}>{tString}</div>
-				<InputTodoContent></InputTodoContent>
+				<InputTodoContent callbackParent={this.refreshTodoContentList}></InputTodoContent>
 			</div>
 		);
 	}
 });
 
 var InputTodoContent = React.createClass({
+	onClickCall: function () {
+		console.log('oooooooooooooo');
+		this.props.callbackParent();
+	},
+
 	render: function() {
+		console.log('iiiiiiiiiiiirender');
 		return (
-			<div>
-		        <button id="add"></button>
-		        <input id="newTodoContent"></input>
-			</div>
+			<form onSubmit={this.onClickCall}>
+				<input type="text"></input>
+				<input type="submit" value="Post"></input>
+			</form>
 		);
 	}
 });
