@@ -42,6 +42,13 @@ div#bottomView {
 	text-align:center;
 }
 
+div#contentView {
+	background-color:#80E0C8;
+	height:50%;
+	width:100%;
+	text-align:center;
+}
+
 input {
 	width:50%;
 	height:50%;
