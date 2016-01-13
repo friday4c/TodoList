@@ -11,38 +11,41 @@ var cStyle = {
 	textAlign:"center"
 };
 
-var TodoList = React.createClass({
-    getDefaultProps: function () {
-	    console.log("getDefaultProps, 1");
-	    return 
-	    {
-		    name : "prop name"
-		};
-    },
-    getInitialState: function () {
-	    console.log("getInitialState, 22222222");
-	    return {
-			nameList:[
-    			"Tom",
-    			"Jony"
-    		],
-	    };
-	},
+var allTodoThings = [
+	"i want to buy ticket at 9:00am",
+	"amy will go hiking with me at 12:00am",
+	"Remember to settle a room"
+];
 
+var TodoList = React.createClass({
+	getInitialState: function() {
+		return {
+			nameList: allTodoThings.slice(0)
+		};
+	},
 	refreshTodoContentList: function () {
+		//write to json//noooo-----> onClickCall
 		console.log('rrrrrrrrrrefresh');
+		//refresh state from json
+		//change state , render 
+		// this.state.nameList = allTodoThings.slice(0);
+		this.setState({nameList: allTodoThings.slice(0)});
 	},
 
 	render: function() {
 		console.log('render, 33333333');
-		var tString = '';
-		for (var pStr of this.state.nameList){
-			tString = tString + pStr + "\n";
-		}
-		console.log(tString);
 		return (
 			<div style={style}>
-				<div style={cStyle}>{tString}</div>
+				<div style={cStyle}>
+				{
+					this.state.nameList.map(
+						function (todoThing)
+						{
+							return <p>{todoThing}</p>
+						}
+					)
+				}
+				</div>
 				<InputTodoContent callbackParent={this.refreshTodoContentList}></InputTodoContent>
 			</div>
 		);
@@ -51,7 +54,7 @@ var TodoList = React.createClass({
 
 var InputTodoContent = React.createClass({
 	onClickCall: function () {
-		console.log('oooooooooooooo');
+		allTodoThings.push(document.getElementById("kkk").value);
 		this.props.callbackParent();
 	},
 
@@ -59,7 +62,7 @@ var InputTodoContent = React.createClass({
 		console.log('iiiiiiiiiiiirender');
 		return (
 			<form onSubmit={this.onClickCall}>
-				<input type="text"></input>
+				<input id="kkk" type="text"></input>
 				<input type="submit" value="Post"></input>
 			</form>
 		);
