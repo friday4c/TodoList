@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Todo-List</title>
-    <link rel="stylesheet" href="css/todolist.css" />
+    <title>TestMultiRender</title>
+    <link rel="stylesheet" href="css/testMultiRender.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
@@ -11,10 +11,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
   </head>
   <body>
-    <div id="viewbox">
-      <div id="topView">Todo List</div>
-      <div id="contentView"></div>
-    </div>
-    <script type="text/babel" src="scripts/todoList.js"></script>
+	<div id="mainBody"></div>
+	<script type="text/babel" src="scripts/todoListStructure.js"></script>
+	<!-- <script type="text/babel" src="scripts/todoListHeadShow.js"></script> -->
+    <script type="text/babel" src="scripts/todoThingsList.js"></script>
+    <!-- <script type="text/babel" src="scripts/todoThingManager.js"></script> -->
+    <script type="text/babel" src="scripts/todoManagerAccess.js"></script>
   </body>
 </html>

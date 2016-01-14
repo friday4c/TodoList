@@ -11,6 +11,10 @@ var cStyle = {
 	textAlign:"center"
 };
 
+var pStyle = {
+
+};
+
 var allTodoThings = [
 	"i want to buy ticket at 9:00am",
 	"amy will go hiking with me at 12:00am",
@@ -28,7 +32,6 @@ var TodoList = React.createClass({
 		console.log('rrrrrrrrrrefresh');
 		//refresh state from json
 		//change state , render 
-		// this.state.nameList = allTodoThings.slice(0);
 		this.setState({nameList: allTodoThings.slice(0)});
 	},
 

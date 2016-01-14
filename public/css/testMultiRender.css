@@ -1,0 +1,59 @@
+html,body,#mainBody,#mainStructure
+{
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+}
+
+#mainStructure
+{
+	background: #eaeaea url('bg.png');
+}
+
+#header 
+{
+	background-color:#7F7F7F;
+	border-radius:0px 0px 10px 10px;
+	height:5%;
+	text-align:center;
+	font-size:200%;
+	color: #eaeaea;
+}
+
+#mainContent
+{
+	height:85%;
+	width:100%;
+}
+
+#footer
+{
+	background-color:#7F7F7F;
+	border-radius:15px 15px 0px 0px;
+	height:10%;
+	/*以下去掉？*/
+	width:100%;
+	/*固定到底部*/
+	bottom:0px;
+	position:absolute;
+}
+
+#managerSelectorAdd
+{
+	background-color:#eaeaea;
+	height:70px;
+	width:70px;
+	border-radius:50%;
+	/*position*/
+	margin:0 auto;
+}
+
+#displayArea
+{
+	height:100%;
+	width:100%;
+	background-color:#5E96FF;
+	border-radius:10px 10px 10px 10px;
+	text-align:center;
+}
