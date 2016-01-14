@@ -39,14 +39,22 @@ html,body,#mainBody,#mainStructure
 	position:absolute;
 }
 
-#managerSelectorAdd
+#managerSelectorAddButton
 {
 	background-color:#eaeaea;
 	height:70px;
 	width:70px;
 	border-radius:50%;
 	/*position*/
-	margin:0 auto;
+	float:left;
+}
+
+#managerAddContent
+{
+	background-color:#B7FFD6;
+	height:100%;
+	width:400px;
+	float:left;
 }
 
 #displayArea
