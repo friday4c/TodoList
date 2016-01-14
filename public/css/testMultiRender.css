@@ -65,3 +65,12 @@ html,body,#mainBody,#mainStructure
 	border-radius:10px 10px 10px 10px;
 	text-align:center;
 }
+
+.todoThingItem
+{
+	height:40px;
+	width:70%;
+	background-color:#B5A35C;
+	font-size:200%;
+	margin:0 auto;
+}

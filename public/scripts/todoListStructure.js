@@ -12,13 +12,17 @@ var ToDoMainStructure = React.createClass({
 			allTodoThings: thingsArray
 		});
 	},
-
+	deleteThing: function() {
+		this.setState({
+			allTodoThings: []
+		});
+	},
 	render: function() {
 		return (
 			<div id="mainStructure">
 				<div id="header">TodoList</div>
 				<div id="mainContent">
-					<TodoThingsList showTodoThings={this.state.allTodoThings}></TodoThingsList>
+					<TodoThingsList showTodoThings={this.state.allTodoThings} callbackFather={this.deleteThing}></TodoThingsList>
 				</div>
 				<ToDoManagerAccess callbackFather={this.addTodoThing}></ToDoManagerAccess>
 			</div>
@@ -35,18 +39,23 @@ var TodoThingsList = React.createClass({
 			]
 		};
 	},
+	deleteItem: function(event) {
+		// var thingsArray = this.props.showTodoThings;
+		// console.log(event.innerHTML);
+		// var index = _.findIndex(thingsArray, {prop2: })
+		// console.log('iiiii' + iiii);
+		// console.log('xxx' + str);
+		console.log(event.target);
+		// this.props.callbackFather();
+	},
 	render: function() {
+		var items = [];
+		for (var item of this.props.showTodoThings) {
+			items.push(<div className="todoThingItem" onClick={this.deleteItem}>{item}</div>);
+		}
 		return (
 			<div id="displayArea">	
-				{
-					this.props.showTodoThings.map
-					(
-						function (thingTodo)
-						{
-							return <div>{thingTodo}</div>
-						}
-					)
-				}
+				{items}
 			</div>
 		);
 	}
@@ -63,8 +72,10 @@ var ToDoManagerAccess = React.createClass({
 	},
 	handleClick: function(event) {
 		var addingThing = document.getElementById('managerAddContent').value;
-		// document.getElementById('managerAddContent').value = '';
-		this.props.callbackFather(addingThing);
+		document.getElementById('managerAddContent').value = '';
+		if (addingThing != '') {
+			this.props.callbackFather(addingThing);
+		}
 	}
 });
 
